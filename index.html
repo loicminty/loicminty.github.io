@@ -49,8 +49,9 @@
         .logo {
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             font-weight: 300;
-            font-size: 32px;
-            letter-spacing: -0.5px;
+            font-size: 20px;
+            letter-spacing: -0.3px;
+            text-transform: lowercase;
         }
         
         /* Simple audio player */
@@ -79,6 +80,20 @@
             display: none;
         }
         
+        /* Centered image */
+        .center-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2rem 0;
+        }
+        
+        .center-image img {
+            max-width: 80px;
+            height: auto;
+            display: block;
+        }
+        
         /* Grid layout - horizontal sections */
         .grid-2col {
             display: grid;
@@ -96,6 +111,16 @@
             border-bottom: 1px solid #ccc;
             padding-bottom: 2rem;
             margin-bottom: 2rem;
+        }
+        
+        /* Section headers */
+        .section-header {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
         }
         
         /* Bio with Inter font */
@@ -123,7 +148,7 @@
             border-bottom: 1px solid #ccc;
         }
         
-        /* Project items - no headers above */
+        /* Project items */
         .work-item {
             margin-bottom: 1rem;
             padding-bottom: 0.75rem;
@@ -213,6 +238,16 @@
             margin-bottom: 0.25rem;
         }
         
+        .bottom-title a {
+            color: black;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        
+        .bottom-title a:hover {
+            border-bottom-color: black;
+        }
+        
         .bottom-meta {
             font-size: 11px;
             color: #666;
@@ -247,7 +282,10 @@
                 gap: 1.5rem;
             }
             .logo {
-                font-size: 24px;
+                font-size: 18px;
+            }
+            .center-image img {
+                max-width: 60px;
             }
         }
         
@@ -267,7 +305,7 @@
     
     <!-- Header row with name + audio player -->
     <div class="header-row">
-        <div class="logo">LOIC MINTY / SLEEP CELL</div>
+        <div class="logo">loic minty / sleep cell</div>
         <div class="audio-mini">
             <button class="play-mini" id="playButton">→</button>
             <span style="font-size: 12px;">play</span>
@@ -275,6 +313,11 @@
                 <source src="potterypieceSmall.mp3" type="audio/mpeg">
             </audio>
         </div>
+    </div>
+    
+    <!-- CENTERED IMAGE -->
+    <div class="center-image">
+        <img src="img.png" alt="Sleep Cell">
     </div>
     
     <!-- Bio + Contact (left column) -->
@@ -295,7 +338,8 @@
         <div></div>
     </div>
     
-    <!-- Projects - 3 columns, no headers -->
+    <!-- Selected projects section -->
+    <div class="section-header">selected projects</div>
     <div class="grid-3col">
         <div>
             <div class="work-item">
@@ -304,34 +348,29 @@
                 <div class="work-description">Premier album studio. Exploration des états modifiés de conscience.</div>
             </div>
             <div class="work-item">
-                <div class="work-title">Ode Marine — Installation</div>
+                <div class="work-title"><a href="https://youtu.be/oKmUs3kClpQ" target="_blank">Ode Marine — Installation</a></div>
                 <div class="work-meta">Juin 2024 — Novembre 2025</div>
                 <div class="work-description">Composition originale, programmation, spatialisation.</div>
             </div>
             <div class="work-item">
-                <div class="work-title">Clair de Lune — Animation</div>
+                <div class="work-title"><a href="https://youtu.be/vu2A_GpKI3A" target="_blank">Clair de Lune — Animation</a></div>
                 <div class="work-meta">2023</div>
                 <div class="work-description">Composition originale pour animation.</div>
             </div>
             <div class="work-item">
-                <div class="work-title">Empreintes Vestiges — Runway</div>
+                <div class="work-title"><a href="https://soundcloud.com/user-513843240-893785008/empreintes-vestige" target="_blank">Empreintes Vestiges — Runway</a></div>
                 <div class="work-meta">Octobre 2024</div>
                 <div class="work-description">Composition originale pour défilé de mode.</div>
             </div>
         </div>
         <div>
             <div class="work-item">
-                <div class="work-title"><a href="https://www.instagram.com/p/DVEn5CtCS3T/" target="_blank">Inner-Space — Deep Loop</a></div>
-                <div class="work-meta">2026</div>
-                <div class="work-description">Série d'évènements inspirée du Deep Listening de Pauline Oliveros.</div>
-            </div>
-            <div class="work-item">
-                <div class="work-title">Amour/Mort — Performance</div>
+                <div class="work-title"><a href="https://youtu.be/Ypa2nJ2czGw" target="_blank">Amour/Mort — Performance</a></div>
                 <div class="work-meta">2024 — Présent</div>
                 <div class="work-description">Instrument non-linéaire pour performances induisant des états de trance.</div>
             </div>
             <div class="work-item">
-                <div class="work-title">Primordial — Pièce pour dôme</div>
+                <div class="work-title"><a href="https://youtu.be/q7FDYEDuMTs" target="_blank">Primordial — Pièce pour dôme</a></div>
                 <div class="work-meta">2024</div>
                 <div class="work-description">En collaboration avec Jérémy Martineau et Gabriel Caux.</div>
             </div>
@@ -343,7 +382,7 @@
         </div>
         <div>
             <div class="work-item">
-                <div class="work-title">Les Voix d'en Bas — Podcast</div>
+                <div class="work-title"><a href="https://open.spotify.com/episode/1DMN6cgAGqB7cLRdMrSQct" target="_blank">Les Voix d'en Bas — Podcast</a></div>
                 <div class="work-meta">2023</div>
                 <div class="work-description">Podcast sur les expériences des personnes racisées à Montréal.</div>
             </div>
@@ -353,7 +392,7 @@
     <!-- Dates + Formation - 2 columns -->
     <div class="grid-2col">
         <div>
-            <div class="section-title" style="margin-bottom: 1rem;">Dates</div>
+            <div class="section-header">dates</div>
             <ul class="dates-list">
                 <li><span class="date">2026.03.27</span> Inner-Space #3 @ Atelier Belleville (MTL)</li>
                 <li><span class="date">2026.02.15</span> Sleep Cell (album launch) @ SAT (MTL)</li>
@@ -363,7 +402,7 @@
             </ul>
         </div>
         <div>
-            <div class="section-title" style="margin-bottom: 1rem;">Formation</div>
+            <div class="section-header">formation</div>
             <div class="work-item">
                 <div class="work-title">Université de Montréal</div>
                 <div class="work-meta">BAC — Musiques numériques</div>
@@ -372,13 +411,21 @@
         </div>
     </div>
     
-    <!-- Bottom section: PAN M + Technique + Médiation (no headers) -->
+    <!-- Professional experience section -->
+    <div class="section-header">professional experience</div>
     <div class="grid-3col" style="border-bottom: none; margin-bottom: 0;">
         <div>
             <div class="bottom-item">
                 <div class="bottom-title">PAN M 360</div>
                 <div class="bottom-meta">2025 – Présent</div>
                 <div class="bottom-description">Production et gestion de contenu. Festivals: Taverne Tour, Pop Montréal, MUTEK.</div>
+            </div>
+        </div>
+        <div>
+            <div class="bottom-item">
+                <div class="bottom-title"><a href="https://www.instagram.com/p/DVEn5CtCS3T/" target="_blank">Inner-Space — Deep Loop</a></div>
+                <div class="bottom-meta">2026</div>
+                <div class="bottom-description">Série d'évènements inspirée du Deep Listening de Pauline Oliveros.</div>
             </div>
         </div>
         <div>
