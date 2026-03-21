@@ -14,26 +14,12 @@
         body {
             background: white;
             color: black;
-            font-family: 'Inter', Helvetica, Arial, sans-serif;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-weight: 300;
             font-size: 14px;
             line-height: 1.4;
             margin: 0;
             padding: 2rem;
-        }
-        
-        /* Custom Fonts */
-        @font-face {
-            font-family: 'Inter';
-            src: url('Inter-VariableFont_opsz,wght.ttf') format('truetype-variations');
-            font-weight: 100 900;
-            font-style: normal;
-        }
-        
-        @font-face {
-            font-family: 'LibreBarcode';
-            src: url('LibreBarcode39Text-Regular.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
         }
         
         /* Layout - full width horizontal */
@@ -54,36 +40,32 @@
         }
         
         .logo {
-            font-family: 'LibreBarcode', monospace;
-            font-size: 48px;
-            font-weight: normal;
-            letter-spacing: 2px;
-            line-height: 1;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-weight: 300;
+            font-size: 32px;
+            letter-spacing: -0.5px;
         }
         
-        /* Small audio player */
+        /* Simple audio player */
         .audio-mini {
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            font-size: 12px;
+            font-size: 13px;
         }
         
         .play-mini {
-            background: black;
-            color: white;
+            background: none;
             border: none;
-            width: 32px;
-            height: 32px;
-            border-radius: 0;
             cursor: pointer;
-            font-family: monospace;
-            font-size: 14px;
+            font-size: 20px;
+            padding: 0;
+            color: black;
             transition: opacity 0.2s;
         }
         
         .play-mini:hover {
-            opacity: 0.7;
+            opacity: 0.6;
         }
         
         audio {
@@ -109,23 +91,23 @@
             margin-bottom: 2rem;
         }
         
-        /* Typography */
+        /* Typography - Helvetica Neue Bold for subheadings */
         h1, h2, h3, .section-title {
-            font-family: 'Lato', 'Inter', Helvetica, Arial, sans-serif;
-            font-weight: 600;
-            letter-spacing: -0.3px;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.2px;
         }
         
         h2 {
-            font-size: 1.1rem;
+            font-size: 1rem;
             margin-bottom: 1rem;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
         
         .section-title {
-            font-size: 0.85rem;
-            font-weight: 600;
+            font-size: 0.8rem;
+            font-weight: 700;
             text-transform: uppercase;
             margin-bottom: 1rem;
             letter-spacing: 1px;
@@ -135,6 +117,7 @@
         .bio p {
             margin-bottom: 0.75rem;
             font-size: 13px;
+            font-weight: 300;
             line-height: 1.5;
             max-width: 90%;
         }
@@ -147,9 +130,10 @@
             color: black;
             text-decoration: none;
             border-bottom: 1px solid #ccc;
+            font-weight: 300;
         }
         
-        /* Project items */
+        /* Project items with links */
         .work-item {
             margin-bottom: 1rem;
             padding-bottom: 0.75rem;
@@ -157,22 +141,35 @@
         }
         
         .work-title {
-            font-family: 'Lato', 'Inter', sans-serif;
-            font-weight: 600;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-weight: 700;
             font-size: 0.9rem;
             margin-bottom: 0.25rem;
+        }
+        
+        .work-title a {
+            color: black;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+        
+        .work-title a:hover {
+            border-bottom-color: black;
         }
         
         .work-meta {
             font-size: 11px;
             color: #666;
             margin: 0.25rem 0;
+            font-weight: 300;
         }
         
         .work-description {
             font-size: 11px;
             color: #444;
             margin-top: 0.25rem;
+            font-weight: 300;
         }
         
         /* Dates list */
@@ -183,30 +180,33 @@
         .dates-list li {
             margin-bottom: 0.5rem;
             font-size: 12px;
+            font-weight: 300;
             display: flex;
             gap: 1rem;
         }
         
         .date {
-            font-weight: 600;
+            font-weight: 700;
             min-width: 90px;
         }
         
-        /* References */
-        .ref-item {
-            margin-bottom: 1rem;
-            border-left: 1px solid #eee;
-            padding-left: 0.75rem;
+        /* Social links */
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
         }
         
-        .ref-name {
-            font-weight: 600;
+        .social-links a {
+            color: black;
+            text-decoration: none;
+            border-bottom: 1px solid #ccc;
             font-size: 12px;
+            font-weight: 300;
         }
         
-        .ref-item div:not(.ref-name) {
-            font-size: 11px;
-            color: #555;
+        .social-links a:hover {
+            border-bottom-color: black;
         }
         
         /* Footer */
@@ -216,6 +216,7 @@
             margin-top: 2rem;
             padding-top: 1rem;
             border-top: 1px solid #eee;
+            font-weight: 300;
         }
         
         /* Responsive */
@@ -228,7 +229,7 @@
                 gap: 1.5rem;
             }
             .logo {
-                font-size: 36px;
+                font-size: 24px;
             }
         }
         
@@ -250,8 +251,8 @@
     <div class="header-row">
         <div class="logo">LOIC MINTY / SLEEP CELL</div>
         <div class="audio-mini">
-            <button class="play-mini" id="playButton">▶</button>
-            <span style="font-size: 11px; color: #666;">sleep cell sample</span>
+            <button class="play-mini" id="playButton">→</button>
+            <span style="font-size: 12px;">play</span>
             <audio id="audioPlayer">
                 <source src="potterypieceSmall.mp3" type="audio/mpeg">
             </audio>
@@ -266,36 +267,85 @@
             <div class="contact">
                 contact: <a href="mailto:loic.minty@gmail.com">loic.minty@gmail.com</a>
             </div>
+            <div class="social-links">
+                <a href="https://www.instagram.com/loicminty/" target="_blank">instagram</a>
+                <a href="https://www.ninaprotocol.com/releases/sleep-cell-love" target="_blank">nina protocol</a>
+            </div>
         </div>
         
-        <!-- Empty column for balance (or could add something later) -->
+        <!-- Empty column for balance -->
         <div></div>
     </div>
     
-    <!-- Œuvres / Projets - 3 columns -->
+    <!-- Œuvres / Projets - 3 columns with links -->
     <div class="grid-3col">
         <div>
             <div class="section-title">Œuvres</div>
-            <div class="work-item"><div class="work-title">Sleep Cell — Album</div><div class="work-meta">Novembre 2025</div><div class="work-description">Premier album studio. Exploration des états modifiés de conscience.</div></div>
-            <div class="work-item"><div class="work-title">Ode Marine — Installation</div><div class="work-meta">Juin 2024 — Novembre 2025</div><div class="work-description">Composition originale, programmation, spatialisation.</div></div>
-            <div class="work-item"><div class="work-title">Clair de Lune — Animation</div><div class="work-meta">Juin 2024 — Novembre 2025</div><div class="work-description">Composition originale pour animation.</div></div>
-            <div class="work-item"><div class="work-title">Empreintes Vestiges — Runway</div><div class="work-meta">Octobre 2024</div><div class="work-description">Composition originale pour défilé de mode.</div></div>
+            <div class="work-item">
+                <div class="work-title"><a href="https://www.ninaprotocol.com/releases/sleep-cell-love" target="_blank">Sleep Cell — Album</a></div>
+                <div class="work-meta">Novembre 2025</div>
+                <div class="work-description">Premier album studio. Exploration des états modifiés de conscience.</div>
+            </div>
+            <div class="work-item">
+                <div class="work-title">Ode Marine — Installation</div>
+                <div class="work-meta">Juin 2024 — Novembre 2025</div>
+                <div class="work-description">Composition originale, programmation, spatialisation.</div>
+            </div>
+            <div class="work-item">
+                <div class="work-title">Clair de Lune — Animation</div>
+                <div class="work-meta">2023</div>
+                <div class="work-description">Composition originale pour animation.</div>
+            </div>
+            <div class="work-item">
+                <div class="work-title">Empreintes Vestiges — Runway</div>
+                <div class="work-meta">Octobre 2024</div>
+                <div class="work-description">Composition originale pour défilé de mode.</div>
+            </div>
         </div>
         <div>
             <div class="section-title">Performances</div>
-            <div class="work-item"><div class="work-title">Amour/Mort — Performance</div><div class="work-meta">2024 — Présent</div><div class="work-description">Instrument non-linéaire pour performances induisant des états de trance.</div></div>
-            <div class="work-item"><div class="work-title">Primordial — Pièce pour dôme</div><div class="work-meta">2024</div><div class="work-description">En collaboration avec Jérémy Martineau et Gabriel Caux.</div></div>
-            <div class="work-item"><div class="work-title">Correspondances — Installation</div><div class="work-meta">2023</div><div class="work-description">Collaboration avec Félicité Couëlle-Brunet.</div></div>
+            <div class="work-item">
+                <div class="work-title"><a href="https://www.instagram.com/p/DVEn5CtCS3T/" target="_blank">Inner-Space — Deep Loop</a></div>
+                <div class="work-meta">2026</div>
+                <div class="work-description">Série d'évènements inspirée du Deep Listening de Pauline Oliveros.</div>
+            </div>
+            <div class="work-item">
+                <div class="work-title">Amour/Mort — Performance</div>
+                <div class="work-meta">2024 — Présent</div>
+                <div class="work-description">Instrument non-linéaire pour performances induisant des états de trance.</div>
+            </div>
+            <div class="work-item">
+                <div class="work-title">Primordial — Pièce pour dôme</div>
+                <div class="work-meta">2024</div>
+                <div class="work-description">En collaboration avec Jérémy Martineau et Gabriel Caux.</div>
+            </div>
+            <div class="work-item">
+                <div class="work-title">Correspondances — Installation</div>
+                <div class="work-meta">2025</div>
+                <div class="work-description">Collaboration avec Félicité Couëlle-Brunet.</div>
+            </div>
         </div>
         <div>
             <div class="section-title">Médias</div>
-            <div class="work-item"><div class="work-title">Les Voix d'en Bas — Podcast</div><div class="work-meta">2024</div><div class="work-description">Podcast sur les expériences des personnes racisées à Montréal.</div></div>
-            <div class="work-item"><div class="work-title">PAN M 360</div><div class="work-meta">2025 — Présent</div><div class="work-description">Production et gestion de contenu. Chargé des festivals Taverne Tour, Pop Montréal, MUTEK.</div></div>
-            <div class="work-item"><div class="work-title">Médiation culturelle</div><div class="work-meta">MUTEK, Centre PHI, Artch.</div><div class="work-description">Ateliers de création avec outils audionumériques.</div></div>
+            <div class="work-item">
+                <div class="work-title">Les Voix d'en Bas — Podcast</div>
+                <div class="work-meta">2023</div>
+                <div class="work-description">Podcast sur les expériences des personnes racisées à Montréal.</div>
+            </div>
+            <div class="work-item">
+                <div class="work-title">PAN M 360</div>
+                <div class="work-meta">2025 — Présent</div>
+                <div class="work-description">Production et gestion de contenu. Chargé des festivals Taverne Tour, Pop Montréal, MUTEK.</div>
+            </div>
+            <div class="work-item">
+                <div class="work-title">Médiation culturelle</div>
+                <div class="work-meta">MUTEK, Centre PHI, Artch.</div>
+                <div class="work-description">Ateliers de création avec outils audionumériques.</div>
+            </div>
         </div>
     </div>
     
-    <!-- Dates + Références - 2 columns -->
+    <!-- Dates + Expérience - 2 columns -->
     <div class="grid-2col">
         <div>
             <div class="section-title">Dates</div>
@@ -308,11 +358,12 @@
             </ul>
         </div>
         <div>
-            <div class="section-title">Références</div>
-            <div class="ref-item"><div class="ref-name">Alain Brunet</div><div>PAN M 360</div><div>(514) 568-6648</div></div>
-            <div class="ref-item"><div class="ref-name">Naya Salamé</div><div>MUTEK Village Numérique</div><div>(514) 586-4423</div></div>
-            <div class="ref-item"><div class="ref-name">Jose Guillermo-Garcia Sierra</div><div>Centre PHI</div><div>(514) 796-5400</div></div>
-            <div class="ref-item"><div class="ref-name">Julien Robert</div><div>Vidéophase</div><div>(514) 553-9147</div></div>
+            <div class="section-title">Formation</div>
+            <div class="work-item">
+                <div class="work-title">Université de Montréal</div>
+                <div class="work-meta">BAC — Musiques numériques</div>
+                <div class="work-description">SATosphère · ACQTIS IATSE</div>
+            </div>
         </div>
     </div>
     
@@ -327,8 +378,8 @@
             <div class="work-item"><div class="work-title">Technicien son — Cinéma</div><div class="work-meta">2023 – Présent</div><div class="work-description">Long métrage (2027) et courts métrages. Soudure et assemblage avancé.</div></div>
         </div>
         <div>
-            <div class="section-title">Formation</div>
-            <div class="work-item"><div class="work-title">Bac — Musiques numériques</div><div class="work-meta">SATosphère · ACQTIS IATSE</div></div>
+            <div class="section-title">Médiation</div>
+            <div class="work-item"><div class="work-title">Médiateur culturel</div><div class="work-meta">MUTEK, Centre PHI, Artch.</div><div class="work-description">Ateliers de création avec outils audionumériques (public 7–70 ans).</div></div>
         </div>
     </div>
     
@@ -348,12 +399,12 @@
             playButton.textContent = '⏸';
         } else {
             audioPlayer.pause();
-            playButton.textContent = '▶';
+            playButton.textContent = '→';
         }
     });
     
     audioPlayer.addEventListener('ended', function() {
-        playButton.textContent = '▶';
+        playButton.textContent = '→';
     });
 </script>
 
