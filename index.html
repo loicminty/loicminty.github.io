@@ -5,88 +5,300 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sleep Cell / Loic Minty</title>
     <style>
-        *{margin:0;padding:0;box-sizing:border-box;}
-        body{background:white;color:black;font-family:'Courier New',monospace;font-size:16px;line-height:1.5;padding:2rem;max-width:1200px;margin:0 auto;}
-        h1,h2,h3{font-weight:normal;letter-spacing:-0.02em;}
-        h1{font-size:2.5rem;margin-bottom:0.25rem;font-weight:600;}
-        h2{font-size:1.25rem;margin:2rem 0 1rem 0;border-top:2px solid black;padding-top:1rem;text-transform:uppercase;}
-        h3{font-size:1rem;margin:1.5rem 0 0.5rem 0;font-weight:600;}
-        a{color:black;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px;}
-        a:hover{text-decoration:none;background:black;color:white;}
-        .contact{margin:1rem 0 2rem 0;font-size:0.9rem;border-bottom:1px solid #ccc;padding-bottom:1rem;}
-        .contact span{display:inline-block;margin-right:1.5rem;}
-        .bio{margin:1.5rem 0 2rem 0;max-width:70ch;}
-        .works-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin:1.5rem 0;}
-        .work-item{border-left:2px solid black;padding-left:1rem;margin-bottom:0.5rem;}
-        .work-title{font-weight:600;margin-bottom:0.25rem;}
-        .work-meta{font-size:0.85rem;color:#444;margin-bottom:0.5rem;}
-        .work-description{font-size:0.9rem;}
-        .dates-list{list-style:none;margin:1rem 0;}
-        .dates-list li{margin-bottom:0.5rem;border-bottom:1px dotted #eee;padding-bottom:0.25rem;}
-        .date{font-weight:600;display:inline-block;width:100px;}
-        .ref-list{margin:1rem 0;}
-        .ref-item{margin-bottom:1rem;border-left:2px solid #ccc;padding-left:1rem;}
-        .ref-name{font-weight:600;}
-        hr{margin:2rem 0;border:none;border-top:1px solid black;}
-        .footer{font-size:0.8rem;margin-top:2rem;text-align:left;}
-        @media (max-width:768px){body{padding:1rem;}.works-grid{grid-template-columns:1fr;}h1{font-size:2rem;}}
-        .audio-link{font-size:0.85rem;margin-top:0.25rem;}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: white;
+            color: black;
+            font-family: Helvetica, Arial, "Times New Roman", Times, serif;
+            font-size: 13px;
+            line-height: 1.5;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0;
+        }
+        
+        /* Typography */
+        h1, h2, h3 {
+            font-weight: normal;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        h1 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        
+        h2 {
+            margin: 2rem 0 0.75rem 0;
+            border-top: 1px solid #ccc;
+            padding-top: 1rem;
+        }
+        
+        /* Layout - everything left-aligned */
+        .bio {
+            max-width: 380px;
+            margin-bottom: 1rem;
+        }
+        
+        .contact {
+            margin: 0.5rem 0 2rem 0;
+        }
+        
+        .contact a {
+            color: black;
+            text-decoration: none;
+            border-bottom: 1px solid #ccc;
+        }
+        
+        .contact a:hover {
+            border-bottom-color: black;
+        }
+        
+        /* Links */
+        a {
+            color: black;
+            text-decoration: none;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        a:hover {
+            border-bottom-color: black;
+        }
+        
+        /* Sections */
+        .section {
+            margin: 1.5rem 0;
+        }
+        
+        /* Projects grid */
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 0.5rem 0 1rem 0;
+        }
+        
+        .work-item {
+            border-left: 1px solid #eee;
+            padding-left: 0.75rem;
+        }
+        
+        .work-title {
+            font-weight: 600;
+            font-size: 13px;
+        }
+        
+        .work-meta {
+            font-size: 11px;
+            color: #666;
+            margin: 0.25rem 0;
+        }
+        
+        .work-description {
+            font-size: 11px;
+            color: #444;
+            margin-top: 0.25rem;
+        }
+        
+        /* Dates list */
+        .dates-list {
+            list-style: none;
+            margin: 0.5rem 0;
+        }
+        
+        .dates-list li {
+            margin-bottom: 0.35rem;
+            font-size: 12px;
+        }
+        
+        .date {
+            font-weight: 600;
+            display: inline-block;
+            width: 90px;
+        }
+        
+        /* References */
+        .ref-list {
+            margin: 0.5rem 0;
+        }
+        
+        .ref-item {
+            margin-bottom: 0.75rem;
+            border-left: 1px solid #eee;
+            padding-left: 0.75rem;
+        }
+        
+        .ref-name {
+            font-weight: 600;
+            font-size: 12px;
+        }
+        
+        .ref-item div:not(.ref-name) {
+            font-size: 11px;
+            color: #555;
+        }
+        
+        /* BIG CENTRAL PLAY BUTTON */
+        .player-section {
+            margin: 4rem 0;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .play-button {
+            background: none;
+            border: none;
+            font-family: Helvetica, Arial, monospace;
+            font-size: 48px;
+            cursor: pointer;
+            padding: 2rem;
+            transition: all 0.2s ease;
+            color: black;
+            display: inline-block;
+        }
+        
+        .play-button:hover {
+            transform: scale(1.05);
+        }
+        
+        .play-button:active {
+            transform: scale(0.98);
+        }
+        
+        /* Hidden audio element */
+        audio {
+            display: none;
+        }
+        
+        hr {
+            margin: 2rem 0;
+            border: none;
+            border-top: 1px solid #eee;
+        }
+        
+        .footer {
+            font-size: 10px;
+            margin-top: 2rem;
+            color: #888;
+        }
+        
+        /* Responsive */
+        @media (max-width: 700px) {
+            body {
+                padding: 1rem;
+            }
+            
+            .works-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .play-button {
+                font-size: 36px;
+                padding: 1rem;
+            }
+        }
+        
+        /* Utility */
+        .small-text {
+            font-size: 11px;
+            color: #666;
+        }
     </style>
 </head>
 <body>
+
 <h1>LOIC MINTY / SLEEP CELL</h1>
-<div class="contact">
-    <span>Montreal, Petite-Italie</span>
-    <span>loicminty@gmail.com</span>
-    <span>+1 438 728 2122</span>
-    <span><a href="#">Bandcamp</a></span>
-    <span><a href="#">SoundCloud</a></span>
-    <span><a href="#">Instagram</a></span>
-</div>
+
 <div class="bio">
-    <p>Loic Minty, alias Sleep Cell, est un artiste sonore, luthier numérique, et médiateur de la culture. Ses œuvres réflètent sur l'accélération du monde moderne, mais aussi les qualités affectives de l'électronique. Inspiré par le <em>Deep Listening</em> de Pauline Oliveros, il commença la série d'évènements <strong>Inner-Space</strong> pour mettre en valeur ses designs d'instruments numériques, et promouvoir l'écoute collective.</p>
-    <p style="margin-top:1rem;">L'amélioration de l'écoute fait aussi parti de son travail en tant que journaliste musical, où il se démarque par son baggage universitaire sur la sociologie des sciences et l'histoire de l'électroacoustique. Ce travail, et celui de sa propre pratique, se rejoignent dans des moments simples, de partage avec les autres, et au final d'un simple amour pour la musique.</p>
-    <p style="margin-top:1rem;">À la suite de ses études en électroacoustique, Sleep Cell est née d'un besoin de relache esthétique, et de curiosité pour le mystique en art numérique. Ses oeuvres s'inspirent toutefois de l'avant-garde américain tel que mentionnée au-dessus, et des artistes de l'IRCAM comme Éliane Radigue et Luc Ferrari, autant qu'elles puisent d'inspirations plus connues comme Suicide, Klein et Grouper.</p>
+    <p>Loic Minty, alias Sleep Cell, est un artiste sonore, luthier numérique, et médiateur de la culture. Ses œuvres réflètent sur l'accélération du monde moderne, mais aussi les qualités affectives de l'électronique. Inspiré par le Deep Listening de Pauline Oliveros, il commença la série d'évènements Inner-Space pour mettre en valeur ses designs d'instruments numériques, et promouvoir l'écoute collective.</p>
+    <p style="margin-top: 0.75rem;">L'amélioration de l'écoute fait aussi parti de son travail en tant que journaliste musical, où il se démarque par son baggage universitaire sur la sociologie des sciences et l'histoire de l'électroacoustique.</p>
+    <p style="margin-top: 0.75rem;">À la suite de ses études en électroacoustique, Sleep Cell est née d'un besoin de relache esthétique, et de curiosité pour le mystique en art numérique.</p>
 </div>
+
+<div class="contact">
+    contact: <a href="mailto:loic.minty@gmail.com">loic.minty@gmail.com</a>
+</div>
+
+<!-- BIG CENTRAL PLAY BUTTON SECTION -->
+<div class="player-section">
+    <button class="play-button" id="playButton">▶</button>
+    <audio id="audioPlayer">
+        <source src="your-sound-file.mp3" type="audio/mpeg">
+        <source src="your-sound-file.wav" type="audio/wav">
+        Your browser doesn't support audio.
+    </audio>
+</div>
+
 <h2>Œuvres / Projets</h2>
 <div class="works-grid">
-    <div class="work-item"><div class="work-title">Sleep Cell — Album</div><div class="work-meta">Novembre 2025</div><div class="work-description">Premier album studio sous l'alias Sleep Cell. Exploration des états modifiés de conscience à travers des paysages électroacoustiques.</div><div class="audio-link"><a href="#">→ Écouter</a></div></div>
-    <div class="work-item"><div class="work-title">Ode Marine — Installation</div><div class="work-meta">Juin 2024 — Novembre 2025</div><div class="work-description">Composition originale, programmation, spatialisation. Installation immersive explorant les textures sonores marines.</div><div class="audio-link"><a href="#">→ Documentation</a></div></div>
-    <div class="work-item"><div class="work-title">Clair de Lune — Animation</div><div class="work-meta">Juin 2024 — Novembre 2025</div><div class="work-description">Composition originale pour animation. Réinterprétation sonore du classique de Debussy.</div><div class="audio-link"><a href="#">→ Écouter / Voir</a></div></div>
-    <div class="work-item"><div class="work-title">Empreintes Vestiges — Runway</div><div class="work-meta">Octobre 2024</div><div class="work-description">Composition originale pour défilé de mode. Fusion entre textures industrielles et ambiances organiques.</div><div class="audio-link"><a href="#">→ Écouter</a></div></div>
-    <div class="work-item"><div class="work-title">Amour/Mort — Performance</div><div class="work-meta">2024 — Présent</div><div class="work-description">Conceptualisation et création d'un instrument non-linéaire en vue de performances/happenings induisant des états de trance.</div><div class="audio-link"><a href="#">→ Documentation</a></div></div>
-    <div class="work-item"><div class="work-title">Primordial — Pièce pour dôme</div><div class="work-meta">2024</div><div class="work-description">Pièce fixe pour dôme en collaboration avec Jérémy Martineau et Gabriel Caux. Composition sonore et animations.</div><div class="audio-link"><a href="#">→ Écouter</a></div></div>
-    <div class="work-item"><div class="work-title">Les Voix d'en Bas — Podcast</div><div class="work-meta">2024</div><div class="work-description">Podcast sur les expériences des personnes racisées à Montréal. Composition sonore et montage. En collaboration avec Emploi Jeunesse.</div><div class="audio-link"><a href="#">→ Écouter</a></div></div>
-    <div class="work-item"><div class="work-title">Correspondances — Installation / Performance</div><div class="work-meta">2023</div><div class="work-description">Fruit d'une collaboration avec Félicité Couëlle-Brunet durant une résidence à 1001 pots. Conception et composition sonore.</div><div class="audio-link"><a href="#">→ Documentation</a></div></div>
+    <div class="work-item"><div class="work-title">Sleep Cell — Album</div><div class="work-meta">Novembre 2025</div><div class="work-description">Premier album studio. Exploration des états modifiés de conscience à travers des paysages électroacoustiques.</div></div>
+    <div class="work-item"><div class="work-title">Ode Marine — Installation</div><div class="work-meta">Juin 2024 — Novembre 2025</div><div class="work-description">Composition originale, programmation, spatialisation. Installation immersive explorant les textures sonores marines.</div></div>
+    <div class="work-item"><div class="work-title">Clair de Lune — Animation</div><div class="work-meta">Juin 2024 — Novembre 2025</div><div class="work-description">Composition originale pour animation. Réinterprétation sonore du classique de Debussy.</div></div>
+    <div class="work-item"><div class="work-title">Empreintes Vestiges — Runway</div><div class="work-meta">Octobre 2024</div><div class="work-description">Composition originale pour défilé de mode. Fusion entre textures industrielles et ambiances organiques.</div></div>
+    <div class="work-item"><div class="work-title">Amour/Mort — Performance</div><div class="work-meta">2024 — Présent</div><div class="work-description">Conceptualisation et création d'un instrument non-linéaire en vue de performances induisant des états de trance.</div></div>
+    <div class="work-item"><div class="work-title">Primordial — Pièce pour dôme</div><div class="work-meta">2024</div><div class="work-description">Pièce fixe pour dôme en collaboration avec Jérémy Martineau et Gabriel Caux.</div></div>
+    <div class="work-item"><div class="work-title">Les Voix d'en Bas — Podcast</div><div class="work-meta">2024</div><div class="work-description">Podcast sur les expériences des personnes racisées à Montréal. Composition sonore et montage.</div></div>
+    <div class="work-item"><div class="work-title">Correspondances — Installation</div><div class="work-meta">2023</div><div class="work-description">Collaboration avec Félicité Couëlle-Brunet durant une résidence à 1001 pots.</div></div>
 </div>
-<h2>Expérience / Rôles</h2>
+
+<h2>Expérience</h2>
 <div class="works-grid">
-    <div class="work-item"><div class="work-title">Production et gestion de contenu</div><div class="work-meta">PAN M 360 — Septembre 2025 – Présent</div><div class="work-description">Gestion d'équipe, recrutement, production de contenus multimédias. Chargé des festivals Taverne Tour, Pop Montréal, Semaine du Neuf, MUTEK.</div></div>
-    <div class="work-item"><div class="work-title">Technicien son — Cinéma, installations</div><div class="work-meta">2023 – Présent</div><div class="work-description">Soudure et assemblage avancé (ALT/Escape, Vidéophase). Technicien et perchiste sonore pour long métrage (2027) et plusieurs courts métrages.</div></div>
-    <div class="work-item"><div class="work-title">Médiateur culturel</div><div class="work-meta">MUTEK, Centre PHI, Artch.</div><div class="work-description">Encadrement d'expériences artistiques, apprentissage de nouvelles technologies (public 7–70 ans). Ateliers de création avec outils audionumériques.</div></div>
+    <div class="work-item"><div class="work-title">Production et gestion de contenu</div><div class="work-meta">PAN M 360 — 2025 – Présent</div><div class="work-description">Gestion d'équipe, recrutement. Chargé des festivals Taverne Tour, Pop Montréal, MUTEK.</div></div>
+    <div class="work-item"><div class="work-title">Technicien son — Cinéma</div><div class="work-meta">2023 – Présent</div><div class="work-description">Technicien et perchiste sonore pour long métrage (2027) et courts métrages.</div></div>
+    <div class="work-item"><div class="work-title">Médiateur culturel</div><div class="work-meta">MUTEK, Centre PHI, Artch.</div><div class="work-description">Encadrement d'expériences artistiques. Ateliers de création avec outils audionumériques.</div></div>
 </div>
-<h2>Dates / Évènements</h2>
+
+<h2>Dates</h2>
 <ul class="dates-list">
     <li><span class="date">2026.03.27</span> — Inner-Space #3 @ Atelier Belleville (MTL)</li>
     <li><span class="date">2026.02.15</span> — Sleep Cell (album launch) @ SAT (MTL)</li>
-    <li><span class="date">2025.11.10</span> — Primordial (dôme) @ Société des Arts Technologiques (MTL)</li>
-    <li><span class="date">2025.09.20</span> — MUTEK Forum — Panel: Deep Listening & Digital Instruments</li>
-    <li><span class="date">2025.05.15</span> — Empreintes Vestiges (runway) @ Montréal Fashion Week</li>
-    <li><span class="date">2024.08.22</span> — Correspondances @ 1001 pots (MTL)</li>
+    <li><span class="date">2025.11.10</span> — Primordial (dôme) @ SAT (MTL)</li>
+    <li><span class="date">2025.09.20</span> — MUTEK Forum — Panel: Deep Listening</li>
+    <li><span class="date">2025.05.15</span> — Empreintes Vestiges @ Montréal Fashion Week</li>
 </ul>
-<h2>Formation / Atouts</h2>
-<div class="works-grid">
-    <div class="work-item"><div class="work-title">Bac — Musiques numériques</div><div class="work-meta">Formation SATosphère · ACQTIS IATSE</div></div>
-    <div class="work-item"><div class="work-title">Atouts</div><div class="work-description">Analyse de systèmes complexes · Rédaction · Organisation d'équipes · Technologies émergentes · Soudure et assemblage avancé</div></div>
-</div>
+
 <h2>Références</h2>
 <div class="ref-list">
-    <div class="ref-item"><div class="ref-name">Alain Brunet</div><div>Chef d'entreprise — PAN M 360</div><div>(514) 568-6648</div></div>
-    <div class="ref-item"><div class="ref-name">Naya Salamé</div><div>Chargée de la médiation — MUTEK Village Numérique</div><div>(514) 586-4423</div></div>
-    <div class="ref-item"><div class="ref-name">Jose Guillermo-Garcia Sierra</div><div>Directeur du FOH — PHI</div><div>(514) 796-5400</div></div>
-    <div class="ref-item"><div class="ref-name">Julien Robert</div><div>Directeur artistique et technique — Vidéophase</div><div>(514) 553-9147</div></div>
+    <div class="ref-item"><div class="ref-name">Alain Brunet</div><div>PAN M 360</div><div>(514) 568-6648</div></div>
+    <div class="ref-item"><div class="ref-name">Naya Salamé</div><div>MUTEK Village Numérique</div><div>(514) 586-4423</div></div>
+    <div class="ref-item"><div class="ref-name">Jose Guillermo-Garcia Sierra</div><div>Centre PHI</div><div>(514) 796-5400</div></div>
+    <div class="ref-item"><div class="ref-name">Julien Robert</div><div>Vidéophase</div><div>(514) 553-9147</div></div>
 </div>
+
 <hr>
-<div class="footer">Loic Minty / Sleep Cell — Montréal, Petite-Italie<br><em>Deep listening. Digital lutherie. Affective electronics.</em></div>
+<div class="footer">
+    Loic Minty / Sleep Cell — Montreal<br>
+    <em>deep listening · digital lutherie · affective electronics</em>
+</div>
+
+<script>
+    // Simple play button functionality
+    const playButton = document.getElementById('playButton');
+    const audioPlayer = document.getElementById('audioPlayer');
+    
+    playButton.addEventListener('click', function() {
+        if (audioPlayer.paused) {
+            audioPlayer.play();
+            playButton.textContent = '⏸';
+        } else {
+            audioPlayer.pause();
+            playButton.textContent = '▶';
+        }
+    });
+    
+    // Reset button when audio ends
+    audioPlayer.addEventListener('ended', function() {
+        playButton.textContent = '▶';
+    });
+</script>
+
 </body>
 </html>
