@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -62,7 +62,7 @@
         
         .logo {
             font-family: 'GalleryModern', 'Courier New', monospace;
-            font-size: 18px;
+            font-size: 21px;
             font-weight: normal;
             letter-spacing: -0.3px;
         }
@@ -138,11 +138,11 @@
             font-size: 11px;
         }
         
-        /* Main heading - twice as big as name */
+        /* Main heading - slightly smaller, no bold */
         .main-heading {
             font-family: math, 'Courier New', monospace;
-            font-weight: 700;
-            font-size: 36px;
+            font-weight: 400;
+            font-size: 28px;
             text-transform: lowercase;
             letter-spacing: -0.5px;
             margin-bottom: 0.35rem;
@@ -151,10 +151,22 @@
             line-height: 1;
         }
         
-        /* Subheadings - original heading size */
+        /* Subheadings - larger (14-15px) */
         .subheading {
             font-family: math, 'Courier New', monospace;
-            font-weight: 700;
+            font-weight: 400;
+            font-size: 14px;
+            text-transform: lowercase;
+            letter-spacing: 0.3px;
+            margin: 0.5rem 0 0.25rem 0;
+            border-bottom: 0.5px solid #ccc;
+            padding-bottom: 0.1rem;
+        }
+        
+        /* Smaller subheading for dates/writings categories */
+        .subheading-small {
+            font-family: math, 'Courier New', monospace;
+            font-weight: 400;
             font-size: 11px;
             text-transform: lowercase;
             letter-spacing: 0.5px;
@@ -194,7 +206,7 @@
             margin-top: 0.1rem;
         }
         
-        /* Dates list - number format */
+        /* Dates list - numerical format */
         .dates-list {
             list-style: none;
         }
@@ -208,7 +220,7 @@
         
         .date {
             font-weight: 700;
-            min-width: 100px;
+            min-width: 90px;
         }
         
         /* Professional experience items */
@@ -285,10 +297,13 @@
                 gap: 0.5rem;
             }
             .logo {
-                font-size: 16px;
+                font-size: 18px;
             }
             .main-heading {
-                font-size: 28px;
+                font-size: 24px;
+            }
+            .subheading {
+                font-size: 12px;
             }
             .fixed-image {
                 max-width: 100px;
@@ -337,9 +352,10 @@
         
         <!-- COLUMN 1: Bio + Contact -->
         <div class="bio-section col-scroll">
+            <div class="main-heading">bio</div>
             <div class="bio-text">
-                <p>Loic Minty, alias Sleep Cell, est un artiste sonore, luthier numérique, et médiateur de la culture. Ses œuvres réflètent sur l'accélération du monde moderne, mais aussi les qualités affectives de l'électronique. Inspiré par le Deep Listening de Pauline Oliveros, il commença la série d'évènements Inner-Space pour mettre en valeur ses designs d'instruments numériques, et promouvoir l'écoute collective.</p>
-                <p>L'amélioration de l'écoute fait aussi parti de son travail en tant que journaliste musical, où il se démarque par son baggage universitaire sur la sociologie des sciences et l'histoire de l'électroacoustique.</p>
+                <p>Loic Minty, also known as Sleep Cell, is a sound artist, digital instrument maker, and cultural mediator. His works reflect on the accelerating pace of the modern world, as well as exploring the emotional qualities of electronic music. Inspired by Pauline Oliveros's Deep Listening and the american avant-garde, he launched the Inner-Space event series to showcase spiritually-guided practices, and promote collective listening.</p>
+                <p>Enhancing listening is also part of his work as a music journalist, where he stands out for his academic background in the sociology of science and the history of electroacoustics. From a McLuhanian approach, Minty passes through music to take on the modern problems of media, consumption, and sensory saturation, tracing how digital infrastructures rewire attention and reshape cultural presence.</p>
             </div>
             <div class="contact">
                 contact: <a href="mailto:loic.minty@gmail.com">loic.minty@gmail.com</a>
@@ -403,26 +419,26 @@
                 <div class="work-description">premier événement inner-space, inspiré du deep listening</div>
             </div>
             
-            <!-- Dates section - number format -->
-            <div class="subheading" style="margin-top: 0.5rem;">dates</div>
+            <!-- Dates section - numerical format -->
+            <div class="subheading-small" style="margin-top: 0.5rem;">dates</div>
             <ul class="dates-list">
-                <li><span class="date">6 septembre 2024</span> empreintes vestiges — lignes de fuites, on show</li>
-                <li><span class="date">8 août 2025</span> correspondances — 1001 pots</li>
-                <li><span class="date">1 mars 2026</span> deep loop — inner-space</li>
-                <li><span class="date">10 novembre 2026</span> amour/mort — code d'accès</li>
+                <li><span class="date">06/09/2024</span> empreintes vestiges — lignes de fuites, on show</li>
+                <li><span class="date">08/08/2025</span> correspondances — 1001 pots</li>
+                <li><span class="date">01/03/2026</span> deep loop — inner-space</li>
+                <li><span class="date">10/11/2026</span> amour/mort — code d'accès</li>
             </ul>
         </div>
         
-        <!-- COLUMN 3: Formation + Professional Experience with subcategories -->
+        <!-- COLUMN 3: Education + Professional Experience -->
         <div class="col-scroll">
-            <div class="main-heading">formation</div>
+            <div class="main-heading">education</div>
             <div class="work-item">
                 <div class="work-title">université de montréal</div>
                 <div class="work-meta">bac — musiques numériques</div>
                 <div class="work-description">séminaire d'immersion à la S.A.T., systèmes A/V temps réel</div>
             </div>
             
-            <div class="main-heading" style="font-size: 36px; margin-top: 0.5rem;">professional experience</div>
+            <div class="main-heading" style="font-size: 28px; margin-top: 0.5rem;">professional experience</div>
             
             <!-- Companies subcategory -->
             <div class="subheading">companies</div>
@@ -467,7 +483,7 @@
                 <div class="writing-category">critique</div>
             </div>
             <div class="writing-item">
-                <div class="writing-title"><a href="https://panm360.com/en/gig_review/making-time-xxv-maria-somervilles-transcendance/" target="_blank">SAT / Making Time XXV : Maria Somerville’s Transcendence</a></div>
+                <div class="writing-title"><a href="https://panm360.com/en/gig_review/making-time-xxv-maria-somervilles-transcendance/" target="_blank">SAT / Making Time XXV : Maria Somerville's Transcendence</a></div>
                 <div class="writing-category">critique</div>
             </div>
             
@@ -488,7 +504,7 @@
                 <div class="writing-category">interview</div>
             </div>
             <div class="writing-item">
-                <div class="writing-title"><a href="https://panm360.com/en/gig_review/making-time-xxv-maria-somervilles-transcendance/" target="_blank">SAT’s Substrat Sound Series: IRL’s soundscapes</a></div>
+                <div class="writing-title"><a href="https://panm360.com/en/gig_review/making-time-xxv-maria-somervilles-transcendance/" target="_blank">SAT's Substrat Sound Series: IRL's soundscapes</a></div>
                 <div class="writing-category">interview</div>
             </div>
         </div>
