@@ -515,8 +515,49 @@
     </div>
 </div>
 
-<!-- Fixed image bottom left -->
-<img src="ChezNino020.jpg" alt="Chez Nino" class="fixed-image">
+<!-- Fixed image bottom left - now larger -->
+<div style="position: fixed; bottom: 0; left: 0; width: 380px; z-index: 1000; margin: 1rem;">
+    <img src="ChezNino020.jpg" alt="Chez Nino" style="width: 100%; height: auto; border: none; display: block;">
+    
+    <!-- Music player centered on top of image -->
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 8px 16px; border: 1px solid black; display: flex; align-items: center; gap: 8px; box-shadow: none;">
+        <button id="playButtonFixed" style="background: none; border: none; cursor: pointer; font-size: 20px; padding: 0; color: black; font-family: monospace;">▶</button>
+        <span style="font-size: 11px; font-family: monospace;">play</span>
+    </div>
+</div>
+
+<script>
+    // Sync the fixed player with the original audio
+    const originalPlayButton = document.getElementById('playButton');
+    const fixedPlayButton = document.getElementById('playButtonFixed');
+    const audioPlayer = document.getElementById('audioPlayer');
+    
+    if (fixedPlayButton) {
+        fixedPlayButton.addEventListener('click', function() {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+                originalPlayButton.textContent = '⏸';
+                fixedPlayButton.textContent = '⏸';
+            } else {
+                audioPlayer.pause();
+                originalPlayButton.textContent = '▶';
+                fixedPlayButton.textContent = '▶';
+            }
+        });
+        
+        audioPlayer.addEventListener('play', function() {
+            fixedPlayButton.textContent = '⏸';
+        });
+        
+        audioPlayer.addEventListener('pause', function() {
+            fixedPlayButton.textContent = '▶';
+        });
+        
+        audioPlayer.addEventListener('ended', function() {
+            fixedPlayButton.textContent = '▶';
+        });
+    }
+</script>
 
 <script>
     const playButton = document.getElementById('playButton');
